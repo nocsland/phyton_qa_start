@@ -79,7 +79,7 @@ def is_triangle_figure(figure):
     if isinstance(figure, Figure):
         return True
     else:
-        print('Переданный объект не является частью класса Figure')
+        return print('Переданный объект не является элементом класса Figure')
 
 
 # Площадь прямоугольника
@@ -96,18 +96,19 @@ def rectangle_per(length_rect, width_rect):
     return rect_per
 
 
-# Добавить к площади треугольника, площадь другой фигуры
-def add_area(figure):
-    if isinstance(figure, Figure):
-        figure_area = figure.area + Rectangle.area
-        print(f'Сумма площади треугольника и другого объекта равна  {figure_area}')
-        return figure_area
-    else:
-        print('Переданный объект не является частью класса Figure')
+# Добавить к площади прямоугольника, площадь другой фигуры
+def add_area_rectangle(figure):
+    figures_area = figure.area + Rectangle.area
+    # print(f'Сумма площади треугольника и другого объекта равна  {figures_area}')
+    return figures_area
 
 
+# Проверить что прямоугольник это объект класса Figure
 def is_rectangle_figure(figure):
-    return isinstance(figure, Figure)
+    if isinstance(figure, Figure):
+        return True
+    else:
+        return print('Переданный объект не является элементом класса Figure')
 
 
 # Площадь квадрата
@@ -121,17 +122,21 @@ def square_area(square_side):
 def square_per(square_side):
     sq_per = (square_side * 4)
     # print(f'Периметр квадрата со стороной {square_side} равен: {sq_per}')
-    return square_side
+    return sq_per
 
 
 # Добавить к площади квадрата, площадь другой фигуры
 def add_area(figure):
+    figures_area = figure.area + Square.area
+    return figures_area
+
+
+# Проверить что квадрат это объект класса Figure
+def is_square_figure(figure):
     if isinstance(figure, Figure):
-        figure_area = figure.area + Square.area
-        print(f'Сумма площади треугольника и другого объекта равна  {figure_area}')
-        return figure_area
+        return True
     else:
-        print('Переданный объект не является частью класса Figure')
+        return print('Переданный объект не является элементом класса Figure')
 
 
 # Площадь круга
@@ -149,13 +154,18 @@ def circle_length(circle_rad):
 
 
 # Добавить к площади круга, площадь другой фигуры
-def add_area(figure):
+def add_area_circle(figure):
+    figures_area = figure.area + Circle.area
+    # print(f'Сумма площади круга и другого объекта равна  {figure_area}')
+    return figures_area
+
+
+# Проверить что круг это объект класса Figure
+def is_circle_figure(figure):
     if isinstance(figure, Figure):
-        figure_area = figure.area + Circle.area
-        print(f'Сумма площади круга и другого объекта равна  {figure_area}')
-        return figure_area
+        return True
     else:
-        print('Переданный объект не является частью класса Figure')
+        return print('Переданный объект не является элементом класса Figure')
 
 
 # Атрибуты треугольника
