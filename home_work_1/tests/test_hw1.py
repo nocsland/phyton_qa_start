@@ -1,4 +1,5 @@
-import Figure
+"""Тесты"""
+from home_work_1.source import Figure
 
 
 # Тесты на треугольник
