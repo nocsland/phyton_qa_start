@@ -1,10 +1,11 @@
 """Тесты"""
+from home_work_1.source.Triangle import triangle
 from home_work_1.source.Triangle import Triangle
 
 
-# # Тесты треугольника
-# def test_triangle_area():
-#     assert tra
+# Тесты треугольника
+def test_triangle_area():
+    assert triangle.area == 15
 
 # def test_triangle_per():
 #     assert Figure.triangle_per(2, 4, 5) == 11
