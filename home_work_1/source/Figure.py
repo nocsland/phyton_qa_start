@@ -1,16 +1,11 @@
 """Исходный код"""
 
 
-# Создаем базовый класс
-
 class Figure:
-    # Создадим конструктор с общими параметрами
-    def __init__(self, name, angles, area, perimeter):
+    """Базовый класс"""
+    def __init__(self, name, angles):
         self.name = name
         self.angles = angles
-        self.area = area
-        self.perimeter = perimeter
-
 
 #
 #
