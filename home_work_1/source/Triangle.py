@@ -34,8 +34,10 @@ class Triangle(Figure):
 
 # Инициализация объекта triangle
 triangle = Triangle(name='triangle', base=5, height=6, angles=3, side_a=2, side_b=4, side_c=5)
+
 # Инициализация и передача из данных из функции для triangle.area
 triangle.area = Triangle.get_triangle_area(triangle)
+
 # Инициализация и передача из данных из функции для triangle.perimeter
 triangle.perimeter = Triangle.get_triangle_per(triangle)
 
