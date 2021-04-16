@@ -7,6 +7,7 @@ class Figure:
         self.name = name
         self.angles = angles
 
+
 #
 #
 # # Площадь треугольника

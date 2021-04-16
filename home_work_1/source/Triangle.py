@@ -1,8 +1,9 @@
-from Figure import Figure
-
+from home_work_1.source.Figure import Figure
+from home_work_1.source.Example import Example
 
 class Triangle(Figure):
     """Конструктор треугольника"""
+
     def __init__(self, name, angles, base, height, side_a, side_b, side_c):
         self.name = name
         self.angles = angles
@@ -12,23 +13,20 @@ class Triangle(Figure):
         self.side_b = side_b
         self.side_c = side_c
 
-    @staticmethod
-    def get_triangle_area(base, height):
+    def get_triangle_area(self):
         """Площадь треугольника"""
-        tr_area = 0.5 * base * height
-        return tr_area
+        triangle_area = 0.5 * self.base * self.height
+        return triangle_area
 
-    @staticmethod
-    def get_triangle_per(a, b, c):
+    def get_triangle_per(self):
         """Периметр треугольника"""
-        tr_per = a + b + c
-        return tr_per
+        triangle_perimeter = self.side_a + self.side_b + self.side_c
+        return triangle_perimeter
 
-    @staticmethod
-    def add_area(figure):
+    def add_area_triangle(self, figure):
         """Метод вычисления суммы площадей фигур"""
         if isinstance(figure, Figure):
-            total_area = figure.area + triangle.area
+            total_area = figure.area + self.area
             return total_area
         else:
             print('передан неправильный класс')
@@ -36,8 +34,9 @@ class Triangle(Figure):
 
 # Инициализация объекта triangle
 triangle = Triangle(name='triangle', base=5, height=6, angles=3, side_a=2, side_b=4, side_c=5)
-# Инициализация triangle.area
-triangle.area = Triangle.get_triangle_area(base=5, height=6)
-# Инициализация triangle.perimeter
-triangle.perimeter = Triangle.get_triangle_per(4, 5, 7)
+# Инициализация и передача из данных из функции для triangle.area
+triangle.area = Triangle.get_triangle_area(triangle)
+# Инициализация и передача из данных из функции для triangle.perimeter
+triangle.perimeter = Triangle.get_triangle_per(triangle)
+
 

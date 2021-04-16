@@ -1,4 +1,4 @@
-from Figure import Figure
+from home_work_1.source.Figure import Figure
 from math import pi
 
 
@@ -9,9 +9,17 @@ class Circle(Figure):
         self.angles = angles
         self.radius = radius
 
-    def add_area(self, figure):
+    def get_circle_area(self):
+        circle_area = 2 * pi * self.radius ** 2
+        return circle_area
+
+    def get_circle_length(self):
+        circle_length = 2 * pi * self.radius
+        return circle_length
+
+    def add_area_circle(self, figure):
         """Метод вычисления суммы площадей фигур"""
-        if isinstance(Circle, Figure):
+        if isinstance(figure, Figure):
             total_area = figure.area + self.area
             return total_area
         else:
@@ -21,8 +29,8 @@ class Circle(Figure):
 # Инициализация объекта circle
 circle = Circle(name='circle', angles=0, radius=6)
 
-# Площадь круга
-circle.area = 2 * pi * circle.radius ** 2
+# Инициализация circle.area
+circle.area = Circle.get_circle_area(circle)
 
-# Длина окружности
-circle.perimeter = 2 * pi * circle.radius
+# Инициализация circle.length
+circle.length = Circle.get_circle_length(circle)
