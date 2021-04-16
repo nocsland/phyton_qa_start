@@ -1,4 +1,4 @@
-from Figure import Figure
+from home_work_1.source.Figure import Figure
 
 
 class Rectangle(Figure):
@@ -9,9 +9,19 @@ class Rectangle(Figure):
         self.length = length
         self.width = width
 
-    def add_area(self, figure):
+    def get_rectangle_area(self):
+        """Площадь прямоугольника"""
+        rectangle_area = self.length * self.width
+        return rectangle_area
+
+    def get_rectangle_perimeter(self):
+        """Периметр прямоугольника"""
+        rectangle_perimeter = 2 * (self.length + self.width)
+        return rectangle_perimeter
+
+    def add_area_rectangle(self, figure):
         """Метод вычисления суммы площадей фигур"""
-        if isinstance(Rectangle, Figure):
+        if isinstance(figure, Figure):
             total_area = figure.area + self.area
             return total_area
         else:
@@ -21,8 +31,8 @@ class Rectangle(Figure):
 # Инициализация объекта rectangle
 rectangle = Rectangle(name='rectangle', angles=4, length=5, width=7)
 
-# Площадь прямоугольника
-rectangle.area = rectangle.length * rectangle.width
+# Инициализация и передача из данных из функции для triangle.area
+rectangle.area = Rectangle.get_rectangle_area(rectangle)
 
-# Периметр прямоугольника
-rectangle.perimeter = 2 * (rectangle.length + rectangle.width)
+# Инициализация и передача из данных из функции для triangle.perimeter
+rectangle.perimeter = Rectangle.get_rectangle_perimeter(rectangle)

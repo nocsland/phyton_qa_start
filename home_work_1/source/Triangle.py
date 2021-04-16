@@ -1,5 +1,5 @@
 from home_work_1.source.Figure import Figure
-from home_work_1.source.Example import Example
+
 
 class Triangle(Figure):
     """Конструктор треугольника"""
