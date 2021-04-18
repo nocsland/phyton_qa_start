@@ -8,7 +8,6 @@ from home_work_1.source.Rectangle import Rectangle
 
 @pytest.fixture
 def circle():
-    # print('object circle was created')
     return Circle(name='circle', angles=0, radius=6)
 
 
