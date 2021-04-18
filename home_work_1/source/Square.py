@@ -18,20 +18,10 @@ class Square(Figure):
         square_perimeter = 4 * self.side
         return square_perimeter
 
-    def add_area_square(self, figure):
+    def add_area(self, figure):
         """Метод вычисления суммы площадей фигур"""
         if isinstance(figure, Figure):
-            total_area = figure.area + self.area
-            return total_area
+            from home_work_1.source.Circle import Circle
+            return Square.get_square_area(self) + Circle.get_circle_area(figure)
         else:
-            print('передан неправильный класс')
-
-
-# Инициализация объекта rectangle
-square = Square(name='square', angles=4, side=6)
-
-# Инициализация и передача из данных из функции для square.area
-square.area = Square.get_square_area(square)
-
-# Инициализация и передача из данных из функции для square.perimeter
-square.perimeter = Square.get_square_perimeter(square)
+            return print('Передан неправильный класс')

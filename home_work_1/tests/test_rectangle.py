@@ -1,24 +1,18 @@
+"""Тесты прямоугольника"""
 from home_work_1.source.Rectangle import Rectangle
-from home_work_1.source.Rectangle import rectangle
-from home_work_1.source.Triangle import triangle
-from home_work_1.source.Example import example
 
 
-# Площадь прямоугольника
-def test_rectangle_area():
+def test_rectangle_area(rectangle):
     assert Rectangle.get_rectangle_area(rectangle) == 35
 
 
-# Периметр прямоугольника
-def test_triangle_perimeter():
+def test_triangle_perimeter(rectangle):
     assert Rectangle.get_rectangle_perimeter(rectangle) == 24
 
 
-# Сумма площадей
-def test_add_area_rectangle():
-    assert Rectangle.add_area_rectangle(rectangle, triangle) == 50.0
+def test_add_area_rectangle(rectangle, square):
+    assert Rectangle.add_area(rectangle, square) == 71
 
 
-# Объект не фигура
-def test_object_not_figure():
-    assert not Rectangle.add_area_rectangle(rectangle, example)
+def test_is_instance_not_figure(triangle, example):
+    assert not Rectangle.add_area(triangle, example)

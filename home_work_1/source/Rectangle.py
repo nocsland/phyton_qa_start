@@ -1,4 +1,5 @@
 from home_work_1.source.Figure import Figure
+from home_work_1.source.Square import Square
 
 
 class Rectangle(Figure):
@@ -11,28 +12,15 @@ class Rectangle(Figure):
 
     def get_rectangle_area(self):
         """Площадь прямоугольника"""
-        rectangle_area = self.length * self.width
-        return rectangle_area
+        return self.length * self.width
 
     def get_rectangle_perimeter(self):
         """Периметр прямоугольника"""
-        rectangle_perimeter = 2 * (self.length + self.width)
-        return rectangle_perimeter
+        return 2 * (self.length + self.width)
 
-    def add_area_rectangle(self, figure):
-        """Метод вычисления суммы площадей фигур"""
+    def add_area(self, figure):
+        """Объект элемент класса"""
         if isinstance(figure, Figure):
-            total_area = figure.area + self.area
-            return total_area
+            return Rectangle.get_rectangle_area(self) + Square.get_square_area(figure)
         else:
-            print('передан неправильный класс')
-
-
-# Инициализация объекта rectangle
-rectangle = Rectangle(name='rectangle', angles=4, length=5, width=7)
-
-# Инициализация и передача из данных из функции для rectangle.area
-rectangle.area = Rectangle.get_rectangle_area(rectangle)
-
-# Инициализация и передача из данных из функции для rectangle.perimeter
-rectangle.perimeter = Rectangle.get_rectangle_perimeter(rectangle)
+            return print('Передан неправильный класс')

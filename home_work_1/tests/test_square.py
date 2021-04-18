@@ -1,24 +1,18 @@
+"""Тесты квадрата"""
 from home_work_1.source.Square import Square
-from home_work_1.source.Square import square
-from home_work_1.source.Rectangle import rectangle
-from home_work_1.source.Example import example
 
 
-# Площадь прямоугольника
-def test_square_area():
+def test_square_area(square):
     assert Square.get_square_area(square) == 36
 
 
-# Периметр прямоугольника
-def test_square_perimeter():
+def test_square_perimeter(square):
     assert Square.get_square_perimeter(square) == 24
 
 
-# Сумма площадей
-def test_add_area_square():
-    assert Square.add_area_square(square, rectangle) == 71.0
+def test_add_area_square(square, circle):
+    assert Square.add_area(square, circle) == 262.19467105846513
 
 
-# Объект не фигура
-def test_object_not_figure():
-    assert not Square.add_area_square(square, example)
+def test_object_not_figure(square, example):
+    assert not Square.add_area(square, example)

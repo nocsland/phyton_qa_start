@@ -1,6 +1,3 @@
-"""Исходный код"""
-
-
 class Figure:
     """Базовый класс"""
     def __init__(self, name, angles):

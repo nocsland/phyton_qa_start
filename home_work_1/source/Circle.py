@@ -1,4 +1,5 @@
 from home_work_1.source.Figure import Figure
+from home_work_1.source.Triangle import Triangle
 from math import pi
 
 
@@ -10,27 +11,16 @@ class Circle(Figure):
         self.radius = radius
 
     def get_circle_area(self):
-        circle_area = 2 * pi * self.radius ** 2
-        return circle_area
+        """Площадь окружности"""
+        return 2 * pi * self.radius ** 2
 
     def get_circle_length(self):
-        circle_length = 2 * pi * self.radius
-        return circle_length
+        """Длина окружности"""
+        return 2 * pi * self.radius
 
-    def add_area_circle(self, figure):
+    def add_area(self, figure):
         """Метод вычисления суммы площадей фигур"""
         if isinstance(figure, Figure):
-            total_area = figure.area + self.area
-            return total_area
+            return Circle.get_circle_area(self) + Triangle.get_triangle_area(figure)
         else:
-            print('передан неправильный класс')
-
-
-# Инициализация объекта circle
-circle = Circle(name='circle', angles=0, radius=6)
-
-# Инициализация circle.area
-circle.area = Circle.get_circle_area(circle)
-
-# Инициализация circle.length
-circle.length = Circle.get_circle_length(circle)
+            return print('Передан неправильный класс')
