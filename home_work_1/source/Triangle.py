@@ -12,19 +12,12 @@ class Triangle(Figure):
         self.side_a = side_a
         self.side_b = side_b
         self.side_c = side_c
+        self.area = self.get_area()
 
-    def get_triangle_area(self):
+    def get_area(self):
         """Площадь треугольника"""
         return 0.5 * self.base * self.height
 
-    def get_triangle_per(self):
+    def get_perimeter(self):
         """Периметр треугольника"""
         return self.side_a + self.side_b + self.side_c
-
-    def add_area(self, figure):
-        """Метод вычисления суммы площадей фигур"""
-        if isinstance(figure, Figure):
-            return Triangle.get_triangle_area(self) + Rectangle.get_rectangle_area(figure)
-        else:
-            return print('Передан неправильный класс')
-

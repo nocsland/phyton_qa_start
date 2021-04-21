@@ -23,7 +23,7 @@ def rectangle():
 
 @pytest.fixture
 def square():
-    return Square(name='square', angles=4, side=6)
+    return Square(name='square', angles=4, length=6, width=6)
 
 
 @pytest.fixture
