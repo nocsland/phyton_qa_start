@@ -10,4 +10,4 @@ class Figure:
         if isinstance(figure, Figure):
             return self.area + figure.area
         else:
-            print('Передан неправильный класс')
+            print("Передан неправильный класс")

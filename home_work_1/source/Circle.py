@@ -17,4 +17,3 @@ class Circle(Figure):
     def get_perimeter(self):
         """Длина окружности"""
         return 2 * pi * self.radius
-

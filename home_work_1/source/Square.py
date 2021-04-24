@@ -1,8 +1,7 @@
-from home_work_1.source.Figure import Figure
 from home_work_1.source.Rectangle import Rectangle
 
 
-class Square(Rectangle, Figure):
+class Square(Rectangle):
     def __init__(self, name, angles, length, width):
         """Конструктор класса"""
         self.name = name
