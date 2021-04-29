@@ -2,7 +2,7 @@ import csv
 import json
 
 users_json = []
-with open('users.json', 'r') as f_json:
+with open('data/users.json', 'r') as f_json:
     j = f_json.read()
     users_dict = json.loads(j)
 
@@ -10,7 +10,7 @@ with open('users.json', 'r') as f_json:
         users_json.append({key: value for key, value in user.items() if key in ['name', 'gender', 'address']})
 
 books_csv = []
-with open('books.csv') as f_csv:
+with open('data/books.csv') as f_csv:
     books_dict = csv.DictReader(f_csv)
 
     for book in books_dict:
