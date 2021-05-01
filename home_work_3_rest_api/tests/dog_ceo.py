@@ -1,4 +1,5 @@
 import requests
+import pytest
 
 proxy = {"http": "localhost:8080", "https": "localhost:8080"}
 header = {"Content-Type": "application/json"}
@@ -20,13 +21,15 @@ def test_app_json():
     assert response.headers['Content-Type'] == 'application/json'
 
 
-def test_body_contains():
+@pytest.mark.parametrize('data_in, expected', [(0, 'boston'), (1, 'english'), (2, 'french')])
+def test_body_contains(data_in, expected):
     response = requests.get(url)
     response_body = response.json()
-    assert response_body['message']['bulldog'][0] == 'boston'
+    assert response_body['message']['bulldog'][data_in] == expected
 
 
-def test_message_len():
+@pytest.mark.parametrize('data_in, expected', [('australian', 1), ('bulldog', 3), ('hound', 7)])
+def test_message_len(data_in, expected):
     response = requests.get(url)
     response_body = response.json()
-    assert len(response_body['message']) == 95
+    assert len(response_body['message'][data_in]) == expected
