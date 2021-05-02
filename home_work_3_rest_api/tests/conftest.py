@@ -1,4 +1,6 @@
 import pytest
+import urllib3
+
 
 
 def pytest_addoption(parser):
@@ -19,12 +21,14 @@ def pytest_addoption(parser):
         '--code',
         default=200,
         choices=[200, 404],
+        type=int,
         help='response code'
     )
 
 
 @pytest.fixture
 def url(request):
+    urllib3.disable_warnings()
     return request.config.getoption('--url')
 
 
